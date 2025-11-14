@@ -1,0 +1,44 @@
+/* ==UserStyle==
+@name           Notion-Black
+@namespace      github.com/openstyles/stylus
+@version        1.0
+@description    Toggle borders: closed=transparent, open=grey, focused deepest=blue
+@author         You
+==/UserStyle== */
+
+@-moz-document domain("notion.so"), domain("notion.site") {
+  /* local palette */
+  :root {
+    --nt-border-open: #454545;
+    --nt-border-active: #53aaff;
+  }
+
+  /* links and text */
+  .notion-dark-theme { --c-bacPri: #000; }
+  .layout a { color: var(--nt-border-active) !important; }
+  .layout a span { opacity: 1 !important; }
+  .layout { color: #fff !important; }
+
+  /* bloc toggle : base */
+  .notion-toggle-block {
+    border: 1px solid transparent !important;
+    border-radius: 10px;
+    background-clip: padding-box;
+    transition: border-color .5s ease;
+  }
+
+  /* opened, not active => grey */
+  .notion-toggle-block:has(> div [aria-expanded="true"]) {
+    border-color: var(--nt-border-open) !important;
+  }
+
+  /* opened, active, only deepest toggle block => bleu */
+  .notion-toggle-block:focus-within:not(:has(.notion-toggle-block:focus-within)) {
+    border-color: var(--nt-border-active) !important;
+  }
+
+  /* accessibility : animation is optional */
+  @media (prefers-reduced-motion: reduce) {
+    .notion-toggle-block { transition: none !important; }
+  }
+}
