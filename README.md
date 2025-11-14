@@ -1,8 +1,4 @@
-# rizzoma-export-notion-import
-
-
-
-# Rizzoma static archive exporter and Rizzoma to Notion importer
+# Rizzoma archive exporter and Notion importer
 
 A production-ready Python notebook to create a complete, self-contained archive of your Rizzoma topics and import them with high fidelity into Notion.
 
