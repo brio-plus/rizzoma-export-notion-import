@@ -17,7 +17,11 @@
   .notion-dark-theme { --c-bacPri: #000; }
   .layout a { color: var(--nt-border-active) !important; }
   .layout a span { opacity: 1 !important; }
-  .layout { color: #fff !important; }
+  .layout { 
+    color: #fff !important;
+    font-family: "Open Sans", sans-serif, "Monaspace Argon Var";
+    font-weight: 300 !important;
+    }
 
   /* bloc toggle : base */
   .notion-toggle-block {
@@ -32,7 +36,7 @@
     border-color: var(--nt-border-open) !important;
   }
 
-  /* opened, active, only deepest toggle block => bleu */
+  /* opened, active, only deepest toggle block => blue */
   .notion-toggle-block:focus-within:not(:has(.notion-toggle-block:focus-within)) {
     border-color: var(--nt-border-active) !important;
   }
@@ -41,4 +45,13 @@
   @media (prefers-reduced-motion: reduce) {
     .notion-toggle-block { transition: none !important; }
   }
+
+  /* complete full width  */
+  .layout.layout-wide {
+    --margin-width: 30px !important;
+  }
+
+  .notion-page-content > div[data-block-id] {
+    max-width: 100% !important;
+  }  
 }
