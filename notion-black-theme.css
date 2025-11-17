@@ -20,7 +20,14 @@
   .layout { 
     color: #fff !important;
     font-family: "Open Sans", sans-serif, "Monaspace Argon Var";
-    font-weight: 300 !important;
+    font-weight: 300 !important;    
+    }
+  .notion-page-content{
+    font-size: 16px!important;
+    line-height: 1.3!important;
+    }
+  .notion-list-item-box-left.pseudoSelection{
+        min-height: calc(1.3em + 6px)!important;
     }
 
   /* bloc toggle : base */
@@ -36,7 +43,7 @@
     border-color: var(--nt-border-open) !important;
   }
 
-  /* opened, active, only deepest toggle block => blue */
+  /* opened, active, only deepest toggle block => bleu */
   .notion-toggle-block:focus-within:not(:has(.notion-toggle-block:focus-within)) {
     border-color: var(--nt-border-active) !important;
   }
@@ -53,5 +60,5 @@
 
   .notion-page-content > div[data-block-id] {
     max-width: 100% !important;
-  }  
+  }    
 }
