@@ -35,7 +35,9 @@ This CSS style provides a cleaner dark mode for Notion, with enhanced visibility
 4.  Under "Apply to", make sure it is set to URLs starting with `https://www.notion.so`.
 5.  Save, and enjoy a cleaner Notion experience.
 
-You can also download the optional font set as a default : [Monaspace](https://monaspace.githubnext.com/)
+You can also download the optional fonts: 
+*   Sans serif (default) = [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+*   Mono spaced = [Monaspace](https://monaspace.githubnext.com/)
 
 ## The Future: Your Feedback Matters
 
