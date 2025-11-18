@@ -16,7 +16,7 @@
     --nt-border-active: #53aaff;
 
     /* Space BETWEEN lines INSIDE a single block/paragraph. */
-    --line-spacing:  0.8em;
+    --line-spacing:  0.5em;
     --block-spacing: 0em;
   }
 
