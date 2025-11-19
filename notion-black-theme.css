@@ -20,6 +20,10 @@
     --block-spacing: 0em;
   }
 
+    /*Disable spellchecker
+    ::spelling-error {
+    text-decoration: none !important;*/
+  }
 
   /* ======================================================== */
   /*                     GENERAL STYLES                       */
@@ -41,37 +45,30 @@
   /*             UNIFIED VERTICAL RHYTHM & GRID               */
   /* ======================================================== */
 
-  /* RULE #1: AGGRESSIVE RESET
-     Neutralize ALL vertical margins and paddings on every block and sub-container.
-     This is the most critical step. */
+  /*Neutralize ALL vertical margins and paddings on every block and sub-container. */
   .notion-page-content div[data-block-id],
   .notion-page-content div[data-block-id] > div {
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  /* RULE #2: INTRA-BLOCK SPACING (Line height)
-     Sets the space between lines within a single paragraph. */
+  /*  Sets the space between lines within a single paragraph. */
   div[data-content-editable-leaf="true"] {
     line-height: calc(1em + var(--line-spacing)) !important;
   }
 
-  /* RULE #3: INTER-BLOCK SPACING (Between Blocks)
-     This applies a top margin to ALL blocks. This handles both sibling spacing
+  /* This applies a top margin to ALL blocks. This handles both sibling spacing
      and parent-to-first-child spacing uniformly. */
   .notion-page-content .notion-selectable[data-block-id] {
       margin-top: var(--block-spacing) !important;
   }
 
-  /* RULE #4: EXCEPTION FOR THE VERY FIRST BLOCK
-     Removes the top margin from the very first block on the page to align it with the top. */
+  /* Removes the top margin from the very first block on the page to align it with the top. */
   .notion-page-content > .notion-selectable[data-block-id]:first-child {
       margin-top: 0 !important;
   }
 
-  /* RULE #5: BULLET & TOGGLE ICON ALIGNMENT
-     Vertically centers the bullet points and toggle arrows with the first line of text.
-     Its height is now controlled by the text's line-height. */
+  /* Vertically centers the bullet points and toggle arrows with the first line of text. */
   .notion-list-item-box-left {
     height: calc(1.3em + var(--line-spacing)) !important;
     min-height: auto !important;
@@ -95,11 +92,11 @@
   .notion-toggle-block:focus-within:not(:has(.notion-toggle-block:focus-within)) {
     border-color: var(--nt-border-active) !important;
   }
-  @media (prefers-reduced-motion: reduce) {
-    .notion-toggle-block { transition: none !important; }
-  }
 
-  /* complete full width  */
+    
+  /* ======================================================== */
+  /*                       FULL WIDTH                         */
+  /* ======================================================== */
   .layout.layout-wide {
     --margin-width: 30px !important;
   }
@@ -107,4 +104,21 @@
   .notion-page-content > div[data-block-id] {
     max-width: 100% !important;
   }    
+    
+  /* ======================================================== */
+  /*                  HOVER MENU BUTTONS                      */
+  /* ======================================================== */
+
+  /* Hides the '+' button that appears on hover. */
+  .notion-selectable-hover-menu-item div[role="button"]:has(svg.plus) {
+      display: none !important;
+  }   
+        
+  /* Repositions the drag handle menu using a relative transform. */
+  .notion-selectable-hover-menu-item div:has(.notion-selectable-drag-handle) {
+      transform: translateX(4px);
+  }   
+    
+    
+    
 }
